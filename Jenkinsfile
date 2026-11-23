@@ -1,7 +1,8 @@
 pipeline {
-    agent any
+    agent { label 'python-agent' }
 
     stages {
+
         stage('Checkout') {
             steps {
                 git branch: 'main',
@@ -18,6 +19,15 @@ pipeline {
         stage('Verify WAR') {
             steps {
                 sh 'ls -lh target/*.war'
+            }
+        }
+
+        stage('Deploy to Tomcat') {
+            steps {
+                sh '''
+                    cp target/jenkins-cicd-project-1.0.war \
+                    /var/lib/tomcat10/webapps/
+                '''
             }
         }
     }
