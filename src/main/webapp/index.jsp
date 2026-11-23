@@ -11,7 +11,7 @@
     <p>Build Tool: Maven</p>
     <p>CI/CD Tool: Jenkins</p>
     <p>Cloud Platform: AWS EC2</p>
-    <p>Web Server: Nginx</p>
+    <p>Application Server: Apache Tomcat</p>
 
     <h3>Created by DevOps Engineer</h3>
 </body>
